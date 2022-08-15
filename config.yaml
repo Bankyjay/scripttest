@@ -1,0 +1,5 @@
+kubectl get pods
+kubectl get nodes
+run docker -p 8080/80
+  name: pods
+  printenv: gege
