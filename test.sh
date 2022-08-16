@@ -1,18 +1,35 @@
 #!/bin/bash
 echo "let's try scripting again"
-bankyjay=fineboy
-echo "bankyjay is $bankyjay"
-if [ -d "configt" ]
+user_group=xx
+if [ user_group == "bankyjay" ]
+then  
+  echo "configure the server"
+elif [ user_group == "admin" ]
 then
-	echo "checking the files in the directories"
-	config_out=$(ls configt)
+  echo "administer the server"
 else
-	echo "creating the directory right away"
-	mkdir configt
-	cd configt
-	touch output.txt
-
+  echo "No permission to configure the server"
 fi
-echo "let's see what's in $config_out"
 
+ #passing a parmeter
+echo "Input a parameter"
+user_group=$1
+if [ "$user_group" == "bankyjay" ]
+then  
+  echo "configure the server"
+elif [ "$user_group" == "admin" ]
+then
+  echo "administer the server"
+else
+  echo "No permission to configure the server"
+fi
 
+#Reading user input
+echo "Reading user input"
+read -p "Please enter your password: " user_pwd
+echo "thanks for your password" $user_pwd
+
+echo "user $1"
+echo "user $2"
+echo "The parameters provided $*"
+echo "THe numbers of parameters provided $#"
